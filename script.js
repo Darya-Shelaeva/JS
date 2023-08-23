@@ -1,146 +1,88 @@
 'use strict'
-/*
-let officialNameJS = 'ECMAScript';
 
-if(officialNameJS = true) {
-    console.log('Верно!')}
-    else {
-            console.log('Не знаете? ECMAScript!')
-        }
-    let number = prompt ('Введите число')
-    if (number > 0){
-        alert(1)
-    } else if (number < 0){
-        alert(-1)
-    } else if (number === 0) {
-        alert(0)
+/*
+const key = prompt ('Введите свойство')
+
+const person = {
+    age: 30,
+    isStudent: false,
+    firstName: "John",
+    lastName: "Doe",
+}
+
+for(const key in person) {
+    console.log(person[key])
+}*/
+/*
+let a = 0
+let b = a
+++b
+
+console.log('b', b)
+console.log('a', a)
+
+*/
+/*
+let obj1 = {first: 'Первый'}
+
+let obj2 = _.clone(obj1)
+
+
+console.log ('obj2', obj2)
+console.log ('obj1', obj1)
+*/
+/*
+let a = ''
+let b = {}
+
+if (!false){
+    console.log ('Валидацию не прошел')
+}*/
+/*
+const person = {
+    age: 30,
+    isStudent: false,
+    firstName: "John",
+    lastName: "Doe",
+
+    sayHi: function() {
+        console.log (`Привет, меня зовут ${this.firstName}. Мне ${this.age} лет.`)
     }
-
-    let a = 1;
-    let b = 2;
-    let result  = (a + b > 4) ? 'Много': 'Мало';
-    console.log (result);
-
-    
-let login = prompt('введите Вашу должность');
-let message = (login === 'Сотрудник' ? 'Привет': login ==='Директор' ? 'Здравствуйте':login ==='' ? 'нет логина');
-
-console.log(message);*/
-/*
-const number = prompt('введите число')
-let counter = 0;
-let sum = 0;
-
-while(counter < number){
-  counter++
-  sum = sum + counter
-
 }
-console.log(sum)*/
-/*
-let a = 3, b = 5;
 
-while(a < 100){
-  console.log(a);
-  let temp = a;
-  a = b;
-  b = temp + b; 
+const person2 = {
+    age: 23,
+    isStudent: false,
+    firstName: "Michael",
+    lastName: "Jackson",
+
+    sayHi: function() {
+        console.log (`Привет, меня зовут ${this.firstName}. Мне ${this.age} лет.`)
+    }
 }*/
 
-/*let message;
-
-if (login == 'Сотрудник') {
-  message = 'Привет';
-} else if (login == 'Директор') {
-  message = 'Здравствуйте';
-} else if (login == '') {
-  message = 'Нет логина';
-} else {
-  message = '';
-}*/
+//функция, которая создает объекты
 /*
-let login = prompt('Введите логин')
-let message
+const makePerson = (age, isStudent, firstName, lastName) => {
 
-switch (login) {
-  case 'Сотрудник':{
-    message = 'Привет'
-  }
-  break;
-
-  case 'Директор':{
-    message = 'Здравствуйте'
-  }
-  break;
-
-  case '':{
-    message = 'Нет логина'
-  }
-  break;
-
-  default: {
-    message = 'Неверный логин'
-  }
-    break;
-}
-console.log(message)*/
-/*
-let numbers = +prompt('Введите число')
-
-const getRoot = (num) => {
-console.log (num*2)
+    return{
+        age,
+        isStudent,
+        firstName,
+        lastName,
+        sayHi: function() {
+            console.log (`Привет, меня зовут ${this.firstName}. Мне ${this.age} лет.`)
+        }
+    }
 }
 
-getRoot(numbers)*/
+makePerson(23, false, "Michael", "Jackson").sayHi()*/
 
-//КАЛЬКУЛЯТОР
-/*
-const summ = (num1, num2) => {
-
-  if(typeof num1 !== 'number'){
-    console.log('Первая переменная - не число. Введите число заново')
-  }
-  if(typeof 2 !== 'number'){
-    console.log('Вторая переменная - не число. Введите число заново')
-  }
-  console.log(num1 + num2)
-}*/
-
-
-let operator = prompt("Введите операцию");
-let numberString = prompt("Введите число");
-let numberString2 = prompt ("Введите второе число");
-
-const number = Number(numberString);
-const number2 = Number(numberString2);
-let result;
-
-switch(operator) {
-  case "+":
-  result = number + number2;
-  break;
-
-  case "-":
-  result = number - number2;
-  break;
-
-  case "*":
-    result = number * number2;
-    break;
-
-    case "/":
-      result = number / number2;
-      break;
-
-
-        default:
-          console.log ('Недопустимая операция');
+const user = {
+    name: 'Michael',
+    work: {
+        title: 'Фронтенд',
+        isRemote: true,
+    },
 }
-
-   if(operator === '/' && Number(numberString2) === 0){
-      throw Error('На ноль делить нельзя')
-    } 
-  
-
-const div = document.querySelector('.result');
-div.innerHTML = result;
+console.log (user?.work?.title)
